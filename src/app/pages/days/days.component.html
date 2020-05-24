@@ -1,0 +1,34 @@
+<div class=" content">
+  <div class=" row">
+    <div class=" col-md-12">
+      <div class=" card">
+        <div class=" card-header">
+          <h4 class=" card-title">Dias da simulação</h4>
+        </div>
+        <div class=" card-body">
+          <table class=" table tablesorter" id="">
+            <thead class=" text-primary">
+              <tr>
+                <th>Dia</th>
+                <th>Infectados</th>
+                <th>Curados</th>
+                <th>Mortos</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr
+                *ngFor="let item of simulationDays |  paginate: { id: 'table_two', itemsPerPage: 30, currentPage: p2 }">
+                <td>{{item.date | date: format: 'UTC': 'pt'}}</td>
+                <td>{{item.infected}}</td>
+                <td>{{item.cured}}</td>
+                <td>{{item.dead}}</td>
+              </tr>
+            </tbody>
+          </table>
+          <pagination-controls id="table_two" (pageChange)="p2 = $event" previousLabel="Anterior" nextLabel="Próximo">
+          </pagination-controls>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

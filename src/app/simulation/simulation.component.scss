@@ -1,0 +1,29 @@
+.mouse-click{
+    cursor: pointer;
+}
+
+.navbar-distance{
+    min-height: 10vh;
+    position: relative;
+    float: right;
+    width: 100%;
+    border-top: 2px solid #fd5d93;
+}
+
+.navbar-distance[data="blue"] {
+  border-top: 2px solid #1d8cf8;
+}
+  
+.navbar-distance[data="green"] {
+  border-top: 2px solid #00f2c3;
+}
+  
+.navbar-distance[data="primary"] {
+  border-top: 2px solid #e14eca;
+}
+
+.detail:hover {
+  color: #ffffff;
+  background-color: #ec250d;
+  border-color: #ec250d;
+}

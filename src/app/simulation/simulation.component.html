@@ -1,0 +1,72 @@
+<div class="row-table navbar-distance">
+    <app-navbar></app-navbar>
+</div>
+<div class=" content">
+    <div class=" row-table">
+        <div class=" col-md-12">
+            <div class=" card">
+                <div class=" card-header">
+                    <h4 class="card-title">LISTA DE SIMULAÇÕES EXECUTADAS</h4>
+                </div>
+                <div class=" card-body">
+                    <table class=" table tablesorter">
+                        <thead class=" text-primary">
+                            <tr>
+                                <th>Cenário</th>
+                                <th>Data da simulação</th>
+                                <th>Dias passados</th>
+                                <th>Número de pessoas</th>
+                                <th>Detalhes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item of items | paginate: { itemsPerPage: 10, currentPage: p }">
+                                <td>{{item.scenario}}</td>
+                                <td>{{item.initialDate | date: format: 'UTC'}}</td>
+                                <td>{{item.daysCount}}</td>
+                                <td>{{item.agentsCount}}</td>
+                                <td (click)="selected(item.id)" class="mouse-click detail">Visualizar</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <pagination-controls (pageChange)="p = $event" previousLabel="Anterior" nextLabel="Próximo">
+                    </pagination-controls>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class=" fixed-plugin">
+    <div class=" show-dropdown" ngbDropdown>
+        <a data-toggle="dropdown" ngbDropdownToggle>
+            <i class=" fa fa-cog fa-2x"> </i>
+        </a>
+        <ul ngbDropdownMenu>
+            <li class=" header-title">ESCOLHA A COR DO MENU E SEU TEMA</li>
+            <li class=" adjustments-line">
+                <a class=" switch-trigger background-color" href="javascript:void(0)">
+                    <div class=" badge-colors text-center">
+                        <span class=" badge filter badge-danger" [ngClass]="{'active':sidebarColor==='red'}"
+                            (click)="changeSidebarColor('red')">
+                        </span>
+                        <span class=" badge filter badge-primary" [ngClass]="{'active':sidebarColor==='primary'}"
+                            (click)="changeSidebarColor('primary')">
+                        </span>
+                        <span class=" badge filter badge-info" [ngClass]="{'active':sidebarColor==='blue'}"
+                            (click)="changeSidebarColor('blue')"> </span>
+                        <span class=" badge filter badge-success" [ngClass]="{'active':sidebarColor==='green'}"
+                            (click)="changeSidebarColor('green')">
+                        </span>
+                    </div>
+                    <div class=" clearfix"></div>
+                </a>
+            </li>
+            <li class=" adjustments-line text-center color-change">
+                <span class=" color-label"> LIGHT MODE </span>
+                <span class=" badge light-badge mr-2" (click)="changeDashboardColor('white-content')"> </span>
+                <span class=" badge dark-badge ml-2" (click)="changeDashboardColor('black-content')"> </span>
+                <span class=" color-label"> DARK MODE </span>
+            </li>
+        </ul>
+    </div>
+</div>

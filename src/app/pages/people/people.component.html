@@ -1,0 +1,42 @@
+<div class=" content">
+  <div class=" row">
+    <div class=" col-md-12">
+      <div class=" card">
+        <div class=" card-header">
+          <h4 class=" card-title">Agentes da simulação</h4>
+        </div>
+        <div class=" card-body">
+          <table class=" table tablesorter">
+            <thead class=" text-primary">
+              <tr>
+                <th>Nome</th>
+                <th>Ocupação</th>
+                <th>Situação atual</th>
+                <th>Data de infecção</th>
+                <th>Data de cura</th>
+                <th>Data de morte</th>
+                <th>Lugar de infecção</th>
+                <th>Atendimento recebido</th>
+              </tr>
+            </thead>
+            <tbody *ngIf="agentsLoaded">
+                <tr
+                    *ngFor="let item of simulationAgents |  paginate: { id: 'table_one', itemsPerPage: 30, currentPage: p }">
+                  <td>{{item.name}}</td>
+                  <td>{{item.occupation}}</td>
+                  <td>{{item.alreadySituation}}</td>
+                  <td>{{item.infectionDate | date: format: 'UTC': 'pt'}}</td>
+                  <td>{{item.cureDate | date: format: 'UTC': 'pt'}}</td>
+                  <td>{{item.deathDate | date: format: 'UTC': 'pt'}}</td>
+                  <td>{{getPlaceOfInfection(item.placeOfInfection)}}</td>
+                  <td>{{item.necessaryHospitalCare}}</td>
+                </tr>
+            </tbody>
+          </table>
+          <pagination-controls id="table_one" (pageChange)="p = $event" previousLabel="Anterior" nextLabel="Próximo">
+          </pagination-controls>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
