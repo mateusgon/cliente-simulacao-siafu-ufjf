@@ -1,15 +1,15 @@
 {
-  "name": "black-dashboard-angular",
+  "name": "client-simulacao-siafu",
   "version": "1.1.0",
   "description": "Black Dasboard Angular, a Creative Tim Desgin. Coded by Creative Tim",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "node server.js",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install && npm start"
+    "heroku-postbuild": "ng build --prod"
   },
   "keywords": [
     "angular dashboard",
@@ -98,5 +98,9 @@
     "ts-node": "8.6.2",
     "tslint": "6.0.0",
     "typescript": "3.7.5"
+  },
+  "engines": {
+    "node": "10.13.0",
+    "npm": "6.4.1"
   }
 }
