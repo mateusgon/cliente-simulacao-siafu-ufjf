@@ -33,7 +33,7 @@ export const ROUTES: RouteInfo[] = [
   },
   {
     path: "/video",
-    title: "Filmagem",
+    title: "Simulação no campus",
     icon: "icon-video-66",
     class: ""
   },
