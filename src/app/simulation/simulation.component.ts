@@ -59,6 +59,15 @@ export class SimulationComponent implements OnInit {
     this.router.navigate(["/"]);
   }
 
+  getLength(){
+    if (this.items.length > 10){
+      return true;
+    }
+    else {
+      return false;
+    }
+  }
+
   changeSidebarColor(color){
     var sidebar = document.getElementsByClassName('sidebar')[0];
     var mainPanel = document.getElementsByClassName('main-panel')[0];
