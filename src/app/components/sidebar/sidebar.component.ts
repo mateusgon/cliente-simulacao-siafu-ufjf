@@ -27,7 +27,7 @@ export const ROUTES: RouteInfo[] = [
   },
   {
     path: "/maps",
-    title: "Mapa de infecções",
+    title: "Exemplo de infecções",
     icon: "icon-map-big",
     class: ""
   },
