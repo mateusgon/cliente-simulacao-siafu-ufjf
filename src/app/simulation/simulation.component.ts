@@ -6,6 +6,7 @@ import { AuthService } from '../_services/auth.service';
 import { TokenStorageService } from '../_services/token-storage.service';
 import { Credential } from '../models/credential';
 import { AuthGuardService } from '../_services/authguard.service';
+import { Day } from '../models/day';
 
 @Component({
   selector: 'app-simulation',
@@ -13,13 +14,16 @@ import { AuthGuardService } from '../_services/authguard.service';
   styleUrls: ['./simulation.component.scss']
 })
 export class SimulationComponent implements OnInit {
-  public sidebarColor: string = "red";
+  public simulationDays: Day[];
+  public sidebarColor: string = "blue";
   public format: string = "dd/MM/yyyy HH:mm:ss";
   public items: Simulation[];
   public isLoginFailed: boolean;
   public errorMessage: string;
   public credential: Credential;
-  public p: number = 1
+  public p: number = 1;
+  public p2: number = 1;
+  public tableSelected: number = 0;
 
   constructor(private simulationService: SimulationService,
     private router: Router, 
@@ -36,8 +40,12 @@ export class SimulationComponent implements OnInit {
     {
       this.simulationService.getAllSimulations().subscribe((data: Simulation[]) => {
         this.items = data;
+        this.items.forEach(element => {
+          this.sumData(element);
+        });
       })  
     }
+    this.changeDashboardColor(this.sidebarColor);
   }
 
   async login() {
@@ -54,13 +62,56 @@ export class SimulationComponent implements OnInit {
     });
   }
 
+  sumData(element: Simulation){
+    element.infected = this.sumTheDaysInfected(element.simulationDays);
+    element.cured = this.sumTheDaysCured(element.simulationDays);
+    element.dead = this.sumTheDaysDead(element.simulationDays);
+  }
+  
+  public sumTheDaysInfected(days: Day[]){
+    let infected = 0;
+    for (var i = 0; i < days.length; i++)
+    { 
+      infected = infected + days[i].infected;
+    }
+    return infected;
+  }
+
+  public sumTheDaysCured(days: Day[]){
+    
+    let cured = 0;
+    for (var i = 0; i < days.length; i++)
+    { 
+      cured = cured + days[i].cured;
+    }
+    return cured;
+  }
+
+  public sumTheDaysDead(days: Day[]){
+    
+    let dead = 0;
+    for (var i = 0; i < days.length; i++)
+    { 
+      dead = dead + days[i].dead;
+    }
+    return dead;
+  }
+
   selected(id: number){
     this.simulationService.setIdSelected(id);
     this.router.navigate(["/"]);
   }
 
+  compare(nmbr){
+    this.tableSelected = nmbr;
+  }
+
+  isSelected() {
+    return this.tableSelected;
+  }
+
   getLength(){
-    if (this.items.length > 10){
+    if (this.items != null && this.items.length > 10){
       return true;
     }
     else {

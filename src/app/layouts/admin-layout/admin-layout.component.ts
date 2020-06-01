@@ -10,7 +10,7 @@ import { TokenStorageService } from 'src/app/_services/token-storage.service';
   styleUrls: ["./admin-layout.component.scss"]
 })
 export class AdminLayoutComponent implements OnInit {
-  public sidebarColor: string = "red";
+  public sidebarColor: string = "blue";
 
   constructor(private simulationService: SimulationService, private router: Router, private tokenStorage: TokenStorageService) {}
   changeSidebarColor(color){
@@ -44,6 +44,8 @@ export class AdminLayoutComponent implements OnInit {
   ngOnInit() {
     if (!this.simulationService.getIdSelected()) {
       this.router.navigate(["/simulacoes"]);
+    }else {
+      this.changeSidebarColor("blue");
     }
   }
 }

@@ -19,7 +19,7 @@ const routes: Routes = [
     children: [
       {
         path: "",
-        redirectTo: "graficos",
+        redirectTo: "info",
         pathMatch: "full"
       },
       {

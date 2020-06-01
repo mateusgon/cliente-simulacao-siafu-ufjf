@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import Map from 'ol/Map';
+import HeatMap from 'ol/layer/Heatmap';
 import Tile from 'ol/layer/Tile';
 import VectorSource from 'ol/source/Vector';
 import VectorLayer from 'ol/layer/Vector';
@@ -94,10 +95,18 @@ export class MapComponent implements OnInit {
       zoom: 15
     });
 
+    /*var vector = new HeatMap({
+      source: this.vectorSource,
+      weight: "10",
+      blur: parseInt("10", 10),
+      radius: parseInt("10", 10),
+    });*/
+
     this.map = new Map({
       target: 'map',
       layers: [this.tileLayer, this.vectorLayer],
       view: this.view
     });
   }
+
 }

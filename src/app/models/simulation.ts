@@ -16,4 +16,5 @@ export class Simulation {
     public agents: Agent[];
     public description: string;
     public videoUrl: string;
+    public simulationDays: Day[]
 }

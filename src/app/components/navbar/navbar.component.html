@@ -10,15 +10,10 @@
       </div>
       <a class=" navbar-brand" href="/simulacoes"> {{ getTitle() }} </a>
     </div>
-    <button aria-label="Toggle navigation" class=" navbar-toggler" (click)="collapse()" [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample" id="navigation" type="button" >
-      <span class=" navbar-toggler-bar navbar-kebab"> </span>
-      <span class=" navbar-toggler-bar navbar-kebab"> </span>
-      <span class=" navbar-toggler-bar navbar-kebab"> </span>
-    </button>
     <div class=" navbar-collapse" [ngbCollapse]="isCollapsed" id="navigation">
       <ul class=" navbar-nav ml-auto">
-        <li class=" nav-item" ngbDropdown>
-          <a class=" nav-link" data-toggle="dropdown" ngbDropdownToggle>
+        <li class=" nav-item">
+          <a class=" nav-link">
             <div class=" photo">
             </div>
           </a>

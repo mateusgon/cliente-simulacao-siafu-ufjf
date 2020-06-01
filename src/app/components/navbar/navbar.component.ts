@@ -176,6 +176,14 @@ export class NavbarComponent implements OnInit, OnDestroy {
     return "COVID-19 - MONITORAMENTO";
   }
 
+  getPage() {
+    if (this.router.url == "/simulacoes")
+    {
+      return true;
+    }
+    return false;
+  }
+
   open(content) {
     this.modalService.open(content, {windowClass: 'modal-search'}).result.then((result) => {
       this.closeResult = `Closed with: ${result}`;
