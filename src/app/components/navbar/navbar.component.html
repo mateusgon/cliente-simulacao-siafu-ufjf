@@ -1,5 +1,5 @@
-<nav class=" navbar navbar-expand-lg navbar-absolute navbar-transparent">
-  <div class=" container-fluid">
+<nav class="navbar navbar-expand-lg navbar-absolute fixed-top navbar-transparent">
+  <div class="container-fluid">
     <div class=" navbar-wrapper">
       <div class=" navbar-toggle d-inline">
         <button class=" navbar-toggler" type="button" (click)="sidebarToggle()">
@@ -9,16 +9,14 @@
         </button>
       </div>
       <a class=" navbar-brand" href="/simulacoes"> {{ getTitle() }} </a>
-    </div>
-    <div class=" navbar-collapse" [ngbCollapse]="isCollapsed" id="navigation">
-      <ul class=" navbar-nav ml-auto">
-        <li class=" nav-item">
-          <a class=" nav-link">
-            <div class=" photo">
-            </div>
-          </a>
-        </li>
-      </ul>
+    </div>  
+    <div class="d-flex">
+      <a href="https://www2.ufjf.br/ufjf/" target="_blank" class="simple-text logo-mini logo-img"> 
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Logo_da_UFJF.png/1200px-Logo_da_UFJF.png" />  
+      </a>
+      <a href="https://www.ufjf.br/deptocomputacao/" target="_blank" class="simple-text logo-mini logo-img">  
+          <img src="https://www.ufjf.br/si/files/2017/07/dcc.png" /> 
+      </a>
     </div>
   </div>
 </nav>
