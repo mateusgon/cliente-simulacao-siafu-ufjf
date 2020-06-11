@@ -3,16 +3,16 @@
     <div class=" col-md-12">
       <div class=" card">
         <div class=" card-header">
-          <h4 class=" card-title">Dias da simulação</h4>
+          <h4 class=" card-title">Simulation days</h4>
         </div>
         <div class=" card-body">
           <table class=" table tablesorter" id="">
             <thead class=" text-primary">
               <tr>
-                <th>Dia</th>
-                <th>Infectados</th>
-                <th>Curados</th>
-                <th>Mortos</th>
+                <th>Day</th>
+                <th>Infected</th>
+                <th>Cured</th>
+                <th>Dead</th>
               </tr>
             </thead>
             <tbody>
@@ -25,7 +25,7 @@
               </tr>
             </tbody>
           </table>
-          <pagination-controls id="table_two" (pageChange)="p2 = $event" previousLabel="Anterior" nextLabel="Próximo">
+          <pagination-controls id="table_two" (pageChange)="p2 = $event" previousLabel="Previous" nextLabel="Next">
           </pagination-controls>
         </div>
       </div>

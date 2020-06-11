@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  AUTH_API: 'http://localhost:8080/api/'
+  AUTH_API: 'https://still-savannah-41205.herokuapp.com/api/'
 };
 
 /*

@@ -6,7 +6,7 @@
         <div class=" card-header">
           <div class=" row">
             <div class=" col-sm-6 text-left">
-              <h5 class=" card-category">ACÚMULO DOS DADOS AO LONGO DO TEMPO</h5>
+              <h5 class=" card-category">ACCUMULATION OF DATA OVER TIME</h5>
               <h2 class=" card-title">{{simulation.scenario}}</h2>
             </div>
             <div class=" col-sm-6">
@@ -14,7 +14,7 @@
                 <label class=" btn btn-sm btn-danger btn-simple" (click)="data=datasets[0];updateOptions();clicked=true;clicked1=false;clicked2=false" [ngClass]="{'active':clicked===true}">
                   <input checked="checked" name="options" type="radio" />
                   <span class=" d-none d-sm-block d-md-block d-lg-block d-xl-block">
-                    INFECTADOS
+                    INFECTED
                   </span>
                   <span class=" d-block d-sm-none">
                     <i class=" tim-icons icon-single-02"> </i>
@@ -23,7 +23,7 @@
                 <label class=" btn btn-sm btn-danger btn-simple" (click)="data=datasets[1];updateOptions();clicked=false;clicked1=true;clicked2=false" [ngClass]="{'active':clicked1===true}">
                   <input class=" d-none d-sm-none" name="options" type="radio"/>
                   <span class=" d-none d-sm-block d-md-block d-lg-block d-xl-block">
-                    CURADOS
+                    CURED
                   </span>
                   <span class=" d-block d-sm-none">
                     <i class=" tim-icons icon-gift-2"> </i>
@@ -32,7 +32,7 @@
                 <label class=" btn btn-sm btn-danger btn-simple" (click)="data=datasets[2];updateOptions();clicked=false;clicked1=false;clicked2=true" [ngClass]="{'active':clicked2===true}">
                   <input class=" d-none" name="options" type="radio" />
                   <span class=" d-none d-sm-block d-md-block d-lg-block d-xl-block">
-                    MORTOS
+                    DEAD
                   </span>
                   <span class=" d-block d-sm-none">
                     <i class=" tim-icons icon-tap-02"> </i>
@@ -52,9 +52,9 @@
     <div class=" col-12">
       <div class=" card card-chart">
         <div class=" card-header">
-          <h5 class=" card-category">DIARIAMENTE</h5>
+          <h5 class=" card-category">DAILY</h5>
           <h3 class=" card-title">
-            INFECTADOS
+            INFECTED
           </h3>
         </div>
         <div class=" card-body">
@@ -67,9 +67,9 @@
     <div class=" col-12">
       <div class=" card card-chart">
         <div class=" card-header">
-          <h5 class=" card-category">DIARIAMENTE</h5>
+          <h5 class=" card-category">DAILY</h5>
           <h3 class=" card-title">
-            CURADOS
+            CURED
           </h3>
         </div>
         <div class=" card-body">
@@ -82,9 +82,9 @@
     <div class=" col-12">
       <div class=" card card-chart">
         <div class=" card-header">
-          <h5 class=" card-category">DIARIAMENTE</h5>
+          <h5 class=" card-category">DAILY</h5>
           <h3 class=" card-title">
-            MORTOS
+            DEAD
           </h3>
         </div>
         <div class=" card-body">

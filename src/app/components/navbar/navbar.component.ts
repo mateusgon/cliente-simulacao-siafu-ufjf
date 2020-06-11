@@ -171,9 +171,9 @@ export class NavbarComponent implements OnInit, OnDestroy {
   getTitle() {
     if (this.router.url == "/simulacoes")
     {
-      return "MONITORAMENTO DAS SIMULAÇÕES - COVID 19 - UNIVERSIDADE FEDERAL DE JUIZ DE FORA"
+      return "SIMULATIONS MONITORING - COVID 19 - FEDERAL UNIVERSITY OF JUIZ DE FORA"
     }
-    return "COVID-19 - MONITORAMENTO";
+    return "COVID-19 - MONITORING";
   }
 
   getPage() {

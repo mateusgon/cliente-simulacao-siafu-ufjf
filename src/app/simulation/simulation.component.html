@@ -6,17 +6,17 @@
         <div class=" col-md-12">
             <div *ngIf="isSelected() == 0" class=" card">
                 <div class=" card-header">
-                    <h4 class="card-title">LISTA DE SIMULAÇÕES EXECUTADAS</h4>
+                    <h4 class="card-title">LIST OF SIMULATIONS</h4>
                 </div>
                 <div class=" card-body">
                     <table class=" table tablesorter">
                         <thead class=" text-primary">
                             <tr>
-                                <th>Cenário</th>
-                                <th>Data da simulação</th>
-                                <th>Dias passados</th>
-                                <th>Número de pessoas</th>
-                                <th>Detalhes</th>
+                                <th>Scenario</th>
+                                <th>Simulation day</th>
+                                <th>Days</th>
+                                <th>People</th>
+                                <th>Details</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -25,19 +25,19 @@
                                 <td>{{item.initialDate | date: format: 'UTC'}}</td>
                                 <td>{{item.daysCount}}</td>
                                 <td>{{item.agentsCount}}</td>
-                                <td (click)="selected(item.id)" class="mouse-click detail">Visualizar</td>
+                                <td (click)="selected(item.id)" class="mouse-click detail">Detail</td>
                             </tr>
                         </tbody>
                     </table>
                     <div class="row">
                         <div class="col-md-9">
-                            <pagination-controls *ngIf="getLength()" (pageChange)="p = $event" previousLabel="Anterior" nextLabel="Próximo">
+                            <pagination-controls *ngIf="getLength()" (pageChange)="p = $event" previousLabel="Previous" nextLabel="Next">
                             </pagination-controls>            
                         </div>
                         <div class="col-md-3">
                             <div class="card-description d-inline-block">
                                 <div (click)="compare(1)" class="mouse-click detail px-2">
-                                    Comparação entre as simulações
+                                    Comparison between simulations
                                 </div>
                             </div>
                         </div>
@@ -46,17 +46,17 @@
             </div>
             <div *ngIf="isSelected() == 1" class=" card">
                 <div class=" card-header">
-                    <h4 class="card-title">COMPARAÇÃO ENTRE AS SIMULAÇÕES</h4>
+                    <h4 class="card-title">COMPARISON BETWEEN SIMULATIONS</h4>
                 </div>
                 <div class=" card-body">
                     <table class=" table tablesorter">
                         <thead class=" text-primary">
                             <tr>
-                                <th>Cenário</th>
-                                <th>Número de infectados</th>
-                                <th>Número de curados</th>
-                                <th>Número de mortos</th>
-                                <th>Detalhes</th>
+                                <th>Scenario</th>
+                                <th>Infected</th>
+                                <th>Cured</th>
+                                <th>Dead</th>
+                                <th>Details</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -65,19 +65,19 @@
                                 <td>{{item.infected}}</td>
                                 <td>{{item.cured}}</td>
                                 <td>{{item.dead}}</td>
-                                <td (click)="selected(item.id)" class="mouse-click detail">Visualizar</td>
+                                <td (click)="selected(item.id)" class="mouse-click detail">Detail</td>
                             </tr>
                         </tbody>
                     </table>
                     <div class="row">
                         <div class="col-md-10">
-                            <pagination-controls *ngIf="getLength()" (pageChange)="p2 = $event" previousLabel="Anterior" nextLabel="Próximo">
+                            <pagination-controls *ngIf="getLength()" (pageChange)="p2 = $event" previousLabel="Previous" nextLabel="Next">
                             </pagination-controls>            
                         </div>
                         <div class="col-md-2">
                             <div class="card-description d-inline-block">
                                 <div (click)="compare(0)" class="mouse-click detail px-2">
-                                    Lista de simulações
+                                    List of simulations
                                 </div>
                             </div>
                         </div>
@@ -93,7 +93,7 @@
             <i class=" fa fa-cog fa-2x"> </i>
         </a>
         <ul ngbDropdownMenu>
-            <li class=" header-title">ESCOLHA A COR DO MENU E SEU TEMA</li>
+            <li class=" header-title">CHOOSE YOUR MENU COLOR AND THEME</li>
             <li class=" adjustments-line">
                 <a class=" switch-trigger background-color" href="javascript:void(0)">
                     <div class=" badge-colors text-center">
