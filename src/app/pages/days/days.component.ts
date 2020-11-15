@@ -21,6 +21,7 @@ export class DaysComponent implements OnInit {
       this.simulationAgents = this.simulation.agents;
       this.simulationDays = this.simulation.days;
       this.simulationService.setSimulationSelected(this.simulation);
+      
     });
 
   }
