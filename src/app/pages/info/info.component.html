@@ -5,55 +5,122 @@
       <div class=" card">
         <div class=" card-header"><h4 class=" title">Sobre o cenário simulado</h4></div>
         <div class=" card-body">
-          <div class="card-description">
-            O Lorem Ipsum é um texto modelo da indústria tipográfica e de impressão. O Lorem Ipsum tem vindo a ser o texto padrão usado por estas indústrias desde o ano de 1500, quando uma misturou os caracteres de um texto para criar um espécime de livro. Este texto não só sobreviveu 5 séculos, mas também o salto para a tipografia electrónica, mantendo-se essencialmente inalterada. Foi popularizada nos anos 60 com a disponibilização das folhas de Letraset, que continham passagens com Lorem Ipsum, e mais recentemente com os programas de publicação como o Aldus PageMaker que incluem versões do Lorem Ipsum.
+          <div class="card-description" [innerHTML]="description">
           </div>
         </div>
       </div>
     </div>
     <div class=" col-md-4">
-      <div class=" card card-user">
-        <div class=" card-body">
-          <p class=" card-text"></p>
-          <div class=" author">
-            <div class=" block block-one"></div>
-            <div class=" block block-two"></div>
-            <div class=" block block-three"></div>
-            <div class=" block block-four"></div>
-            <a href="javascript:void(0)">
-              <img alt="Logo DCC" class=" avatar" src="https://www.ufjf.br/bigdata/files/2017/05/DCC.png" />
-
-              <h5 class=" title">Autores</h5>
-            </a>
-            <p class=" description">Infos</p>
-          </div>
-          <div class=" card-description">
-            O Lorem Ipsum é um texto modelo da indústria tipográfica e de impressão. O Lorem Ipsum tem vindo a ser o texto padrão usado por estas indústrias desde o ano de 1500, quando uma misturou os caracteres de um texto para criar um espécime de livro. Este texto não só sobreviveu 5 séculos, mas também o salto para a tipografia electrónica, mantendo-se essencialmente inalterada. Foi popularizada nos anos 60 com a disponibilização das folhas de Letraset, que continham passagens com Lorem Ipsum, e mais recentemente com os programas de publicação como o Aldus PageMaker que incluem versões do Lorem Ipsum.
-          </div>
-        </div>
-        <div class=" card-footer">
-          <div class=" button-container">
-            <button
-              class=" btn btn-icon btn-round btn-facebook"
-              href="javascript:void(0)"
-            >
-              <i class=" fab fa-facebook"> </i>
-            </button>
-            <button
-              class=" btn btn-icon btn-round btn-twitter"
-              href="javascript:void(0)"
-            >
-              <i class=" fab fa-twitter"> </i>
-            </button>
-            <button
-              class=" btn btn-icon btn-round btn-google"
-              href="javascript:void(0)"
-            >
-              <i class=" fab fa-google-plus"> </i>
-            </button>
-          </div>
-        </div>
-      </div>
+      <ngb-carousel>
+        <ng-template ngbSlide>
+          <div class=" card card-user">
+            <div class=" card-body">
+              <p class=" card-text">Sobre os autores</p>
+              <div class="author">
+                <a href="http://lattes.cnpq.br/1622643885752324" target="_blank">
+                  <img alt="Fernando Colugnati" class=" avatar" src="assets/img/fernando.gif" />
+                </a>
+              </div>          
+              <div class=" card-description">
+                <strong>Fernando A. B. Colugnati</strong>
+                <p>Graduação e mestrado em Estatística pela Universidade Estadual de Campinas e
+                doutorado em Ciências pela UNIFESP . Atualmente é Professor Adjunto do Depto. de
+                Internato/ Fac. de Medicina/ UFJF e Coordenador do Programa de Pós-Graduação
+                Saúde (UFJF), sendo também orientador do programa da Psicologia. Atualmente
+                desenvolve linhas de pesquisa no Núcleo Interdisciplinar de Estudos e Pesquisas em
+                Nefrologia (NIEPEN/ UFJF) em avaliação de tecnologias em saúde e modelos
+                estatísticos para acompanhamento do tratamento de doenças crônicas.</p>          
+              </div>
+            </div>
+          </div>  
+        </ng-template>
+        <ng-template ngbSlide>
+          <div class=" card card-user">
+            <div class=" card-body">
+              <p class=" card-text">Sobre os autores</p>
+              <div class="author">
+                <a href="http://lattes.cnpq.br/3640497501056163" target="_blank">
+                  <img alt="José Maria" class=" avatar" src="assets/img/jose.gif" />
+                </a>
+              </div>          
+              <div class=" card-description">
+                <strong>José Maria Nazar David</strong>
+                <p>Possui graduação em Engenharia Elétrica pelo Instituto Militar de Engenharia (1983), mestrado (1991) e doutorado (2004) em Engenharia de Sistemas e Computação pela COPPE/Universidade Federal do Rio de Janeiro. Atualmente é professor associado e membro do Programa de Pós-graduação em Ciência da Computação da Universidade Federal de Juiz de Fora. Tem experiência na área de Ciência da Computação, com ênfase em Engenharia de Software, atuando principalmente nos seguintes temas: sistemas colaborativos, desenvolvimento global de software, manutenção e evolução de software, e-Science, informática e educação, internet of things (IoT) e ecossistemas de software. É membro da Sociedade Brasileira de Computação (SBC).</p>          
+              </div>
+            </div>
+          </div>  
+        </ng-template>               
+        <ng-template ngbSlide>
+          <div class=" card card-user">
+            <div class=" card-body">
+              <p class=" card-text">Sobre os autores</p>
+              <div class="author">
+                <a href="http://lattes.cnpq.br/2900995280822495" target="_blank">
+                  <img alt="Mario Dantas" class=" avatar" src="assets/img/mario.gif" />
+                </a>
+              </div>          
+              <div class=" card-description">
+                <strong>Mario Antonio Ribeiro Dantas</strong>
+                <p>Mario A.R. Dantas é Professor do Departamento de Ciência da Computação (DCC) do Instituto de Ciências Exatas (ICE) da Universidade Federal de Juiz de Fora (UFJF) e do Programa de Pós-Graduação em Ciência da Computação (PPGCC) da Universidade Federal de Juiz de Fora (UFJF), com PhD em Ciência da Computação pela University of Southampton (UK), Professor Visitante na University of Western Ontario (Canadá, 2012) e Pesquisador Visitante Sênior em Riken (Japão, 2017-2018). Ele é autor de cem artigos científicos, publicados na Áustria, Bélgica, Brasil, Canadá, Croacia, Cyrus, Inglaterra, Finlândia, França, Alemanha, Grécia, Holanda, Itália, Japão, Marrocos, México, Polônia, Portugal, Rússia, Suíça , Tailand, Taiwan, Tunísia e EUA, dezenas de capítulos de livros e três livros. Ele já orientou diversos trabalhos de graduação, especialização, mestrado e doutorado. Ele atuou como consultor em vários projetos com a indústria nas áreas de IoT, redes, sistemas distribuídos e ambientes de alto desempenho. Ele ganhou 29 prêmios nacionais e internacionais relacionados a ensino e pesquisa. O Professor Dantas é editor associado da ACM Computing Surveys e revisor de várias revistas internacionais. Ele também é membro de comitês em várias conferências internacionais.</p>          
+              </div>
+            </div>
+          </div>  
+        </ng-template>        
+        <ng-template ngbSlide>
+          <div class=" card card-user">
+            <div class=" card-body">
+              <p class=" card-text">Sobre os autores</p>
+              <div class="author">
+                <a href="http://lattes.cnpq.br/4525685243016203" target="_blank">
+                  <img alt="Mateus Gonçalo" class=" avatar" src="assets/img/mateus.gif" />
+                </a>
+              </div>          
+              <div class=" card-description">
+                <strong>Mateus Gonçalo do Nascimento</strong>
+                <p>Aluno do Programa de Pós Graduação em Ciência da Computação da Universidade Federal de Juiz de Fora. Graduado em Sistemas de Informação pela Universidade Federal de Juiz de Fora. Atuou como bolsista no Laboratório de Bioinformática e Genômica Animal da Empresa Brasileira de Pesquisa Agropecuária. Na Universidade Federal de Juiz de Fora foi monitor da disciplina de Introdução a Sistemas de Informação e participou também como bolsista do programa de Treinamento Profissional do Núcleo de Recursos Computacionais, atuando no projeto de Implantação de Governança de TI no Instituto de Ciências Exatas e bolsista do Grupo de Educação Tutorial de Sistemas de Informação.</p>          
+              </div>
+            </div>
+          </div>  
+        </ng-template>
+      </ngb-carousel>
+      <ngb-carousel>
+        <ng-template ngbSlide>
+          <div class=" card card-user">
+            <div class=" card-body">
+              <p class=" card-text">Realização</p>
+              <div class="card-description">
+                <a href="https://www2.ufjf.br/ufjf/" target="_blank">
+                  <img alt="Universidade Federal de Juiz de Fora" src="../assets/img/logo_ufjf.png" />
+                </a>  
+              </div>
+            </div>
+          </div>  
+        </ng-template>
+        <ng-template ngbSlide>
+          <div class=" card card-user">
+            <div class=" card-body">
+              <p class=" card-text">Realização</p>
+              <div class=" card-description">
+                <a href="https://www2.ufjf.br/pgcc/" target="_blank">
+                  <img alt="Programa de Pós-Graduação em Ciência da Computação" src="assets/img/ppgcc.png" />
+                </a>
+              </div>
+            </div>
+          </div>  
+        </ng-template>
+        <ng-template ngbSlide>
+          <div class=" card card-user">
+            <div class=" card-body">
+              <p class=" card-text">Realização</p>
+              <div class=" card-description">
+                <a href="https://www.ufjf.br/ppgsaude/" target="_blank">
+                  <img alt="Programa de Pós-Graduação em Saúde" src="assets/img/medicina.jpg" />
+                </a>
+              </div>
+            </div>
+          </div>  
+        </ng-template>
+      </ngb-carousel>
     </div>
   </div>
 </div>

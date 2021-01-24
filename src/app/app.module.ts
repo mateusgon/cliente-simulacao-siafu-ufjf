@@ -8,7 +8,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { AppComponent } from "./app.component";
 import { AdminLayoutComponent } from "./layouts/admin-layout/admin-layout.component";
 
-import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
+import { NgbModule } from "@ng-bootstrap/ng-bootstrap";  
 import {APP_BASE_HREF} from '@angular/common';
 
 import { AppRoutingModule } from "./app-routing.module";
@@ -31,7 +31,7 @@ registerLocaleData(localeBr, "pt");
     RouterModule,
     AppRoutingModule,
     ToastrModule.forRoot(),
-    NgxPaginationModule
+    NgxPaginationModule,
   ],
   declarations: [AppComponent, AdminLayoutComponent, SimulationComponent],
   providers: [authInterceptorProviders, AuthGuardService, {provide: APP_BASE_HREF, useValue : '/' }],
