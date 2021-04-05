@@ -3,6 +3,7 @@ import { Simulation } from 'src/app/models/simulation';
 import { SimulationService } from 'src/app/_services/simulation.service';
 import { Agent } from 'src/app/models/agent';
 import { Day } from 'src/app/models/day';
+import { Router } from '@angular/router';
 
 @Component({
   selector: "app-days",
@@ -13,16 +14,23 @@ export class DaysComponent implements OnInit {
   public simulationAgents: Agent[];
   public simulationDays: Day[];
   public p2: number = 1
-  constructor(private simulationService: SimulationService) {}
+  constructor(private simulationService: SimulationService, private router: Router) {}
 
   ngOnInit() {
-    this.simulationService.findSelected(this.simulationService.getIdSelected()).subscribe((data: Simulation) => {
-      this.simulation = data;
-      this.simulationAgents = this.simulation.agents;
-      this.simulationDays = this.simulation.days;
-      this.simulationService.setSimulationSelected(this.simulation);
-      
-    });
+    if (this.simulationService.getIdSelected())
+    {
+      this.simulationService.findSelected(this.simulationService.getIdSelected()).subscribe((data: Simulation) => {
+        this.simulation = data;
+        this.simulationAgents = this.simulation.agents;
+        this.simulationDays = this.simulation.days;
+        this.simulationService.setSimulationSelected(this.simulation);
+        
+      });  
+    }
+    else
+    {
+      this.router.navigate(["/"]);
+    }
 
   }
 }

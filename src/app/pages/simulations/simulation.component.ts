@@ -1,19 +1,20 @@
-import { Component, OnInit } from '@angular/core';
-import { SimulationService } from '../_services/simulation.service';
-import { Simulation } from '../models/simulation';
+import { Component, OnInit } from "@angular/core";
+import { Simulation } from 'src/app/models/simulation';
+import { SimulationService } from 'src/app/_services/simulation.service';
+import { Day } from 'src/app/models/day';
 import { Router } from '@angular/router';
-import { AuthService } from '../_services/auth.service';
-import { TokenStorageService } from '../_services/token-storage.service';
-import { Credential } from '../models/credential';
-import { AuthGuardService } from '../_services/authguard.service';
-import { Day } from '../models/day';
+import { AuthService } from 'src/app/_services/auth.service';
+import { TokenStorageService } from 'src/app/_services/token-storage.service';
+import { AuthGuardService } from 'src/app/_services/authguard.service';
+import { Credential } from 'src/app/models/credential';
 
 @Component({
-  selector: 'app-simulation',
-  templateUrl: './simulation.component.html',
+  selector: "app-simulation",
+  templateUrl: "simulation.component.html",
   styleUrls: ['./simulation.component.scss']
 })
 export class SimulationComponent implements OnInit {
+
   public simulationDays: Day[];
   public sidebarColor: string = "blue";
   public format: string = "dd/MM/yyyy HH:mm:ss";
@@ -45,7 +46,6 @@ export class SimulationComponent implements OnInit {
         });
       })  
     }
-    this.changeDashboardColor(this.sidebarColor);
   }
 
   async login() {
@@ -58,7 +58,6 @@ export class SimulationComponent implements OnInit {
     }).catch(error => {
       this.errorMessage = error.error.message;
       this.isLoginFailed = true;
-      //Navegar para a página de erro 
     });
   }
 
@@ -99,7 +98,7 @@ export class SimulationComponent implements OnInit {
 
   selected(id: number){
     this.simulationService.setIdSelected(id);
-    this.router.navigate(["/"]);
+    this.router.navigate(["/simulacao/info"]);
   }
 
   compare(nmbr){
@@ -116,33 +115,6 @@ export class SimulationComponent implements OnInit {
     }
     else {
       return false;
-    }
-  }
-
-  changeSidebarColor(color){
-    var sidebar = document.getElementsByClassName('sidebar')[0];
-    var mainPanel = document.getElementsByClassName('main-panel')[0];
-    var navbarDistance = document.getElementsByClassName('navbar-distance')[0];
-
-    this.sidebarColor = color;
-
-    if(sidebar != undefined){
-        sidebar.setAttribute('data',color);
-    }
-    if(mainPanel != undefined){
-        mainPanel.setAttribute('data',color);
-    }
-    if(navbarDistance != undefined){
-        navbarDistance.setAttribute('data',color);
-    }
-  }
-  changeDashboardColor(color){
-    var body = document.getElementsByTagName('body')[0];
-    if (body && color === 'white-content') {
-        body.classList.add(color);
-    }
-    else if(body.classList.contains('white-content')) {
-      body.classList.remove('white-content');
     }
   }
 }

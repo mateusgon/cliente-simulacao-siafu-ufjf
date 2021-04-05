@@ -15,10 +15,11 @@ import { AppRoutingModule } from "./app-routing.module";
 import { ComponentsModule } from "./components/components.module";
 import { authInterceptorProviders } from './_helpers/auth.interceptor';
 import { AuthGuardService } from './_services/authguard.service';
-import { SimulationComponent } from './simulation/simulation.component';
 import { registerLocaleData } from '@angular/common';
 import localeBr from "@angular/common/locales/pt";
 import {NgxPaginationModule} from 'ngx-pagination';
+import { FirstPageLayoutComponent } from './layouts/firstpage-layout/firstpage-layout.component';
+import { NotfoundComponent } from './notfound/notfound.component';
 registerLocaleData(localeBr, "pt");
 
 @NgModule({
@@ -33,7 +34,7 @@ registerLocaleData(localeBr, "pt");
     ToastrModule.forRoot(),
     NgxPaginationModule,
   ],
-  declarations: [AppComponent, AdminLayoutComponent, SimulationComponent],
+  declarations: [AppComponent, AdminLayoutComponent, FirstPageLayoutComponent, NotfoundComponent],
   providers: [authInterceptorProviders, AuthGuardService, {provide: APP_BASE_HREF, useValue : '/' }],
   bootstrap: [AppComponent]
 })

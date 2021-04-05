@@ -3,32 +3,45 @@ import { CommonModule } from "@angular/common";
 import { BrowserModule } from "@angular/platform-browser";
 import { Routes, RouterModule } from "@angular/router";
 
-import { AdminLayoutComponent } from "./layouts/admin-layout/admin-layout.component";
+import { FirstPageLayoutComponent } from './layouts/firstpage-layout/firstpage-layout.component';
+import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { AuthGuardService } from './_services/authguard.service';
-import { SimulationComponent } from './simulation/simulation.component';
+import { NotfoundComponent } from './notfound/notfound.component';
 
 const routes: Routes = [
   {
-    path: "simulacoes",
-    component: SimulationComponent,
-  },
-  {
     path: "",
-    component: AdminLayoutComponent,
-    canActivate: [AuthGuardService],
+    component: FirstPageLayoutComponent,
     children: [
       {
         path: "",
-        redirectTo: "info",
+        redirectTo: "simulacoes/sobre",
         pathMatch: "full"
       },
       {
         path: "",
         loadChildren:
-          "./layouts/admin-layout/admin-layout.module#AdminLayoutModule"
+          "./layouts/firstpage-layout/firstpage-layout.module#FirstPageLayoutModule"
       }
     ]
   },
+  {
+    path: "simulacao",
+    component: AdminLayoutComponent,
+    canActivate: [AuthGuardService],
+    children: [
+      {
+        path: "simulacao/info",
+        redirectTo: "info",
+        pathMatch: "full"
+      },
+      {
+        path: "",
+        loadChildren: "./layouts/admin-layout/admin-layout.module#AdminLayoutModule",
+      },
+    ]
+  },
+  { path: '**', component: NotfoundComponent}
 ];
 
 @NgModule({

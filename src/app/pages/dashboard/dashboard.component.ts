@@ -5,6 +5,7 @@ import { Simulation } from 'src/app/models/simulation';
 import { formatDate } from '@angular/common';
 import { Day } from 'src/app/models/day';
 import { element } from 'protractor';
+import { Router } from '@angular/router';
 
 @Component({
   selector: "app-dashboard",
@@ -21,14 +22,21 @@ export class DashboardComponent implements OnInit {
   public clicked1: boolean = false;
   public clicked2: boolean = false;
 
-  constructor(private simulationService: SimulationService) {}
+  constructor(private simulationService: SimulationService, private router: Router) {}
 
   ngOnInit() {
-    this.simulationService.findSelected(this.simulationService.getIdSelected()).subscribe((data: Simulation) => {
-      this.simulation = data;
-      this.simulationService.setSimulationSelected(this.simulation);
-      this.initializeData();
-    });
+    if (this.simulationService.getIdSelected())
+    {
+      this.simulationService.findSelected(this.simulationService.getIdSelected()).subscribe((data: Simulation) => {
+        this.simulation = data;
+        this.simulationService.setSimulationSelected(this.simulation);
+        this.initializeData();
+      });  
+    }
+    else
+    {
+      this.router.navigate(["/"]);
+    }
   }
 
   public initializeData(){

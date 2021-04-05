@@ -37,4 +37,9 @@ export class SimulationService {
   getSimulationSelected(){
     return this.simulationSelected;
   }
+
+  renewId()
+  {
+    this.idSelected = 0;
+  }
 }

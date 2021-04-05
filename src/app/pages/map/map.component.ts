@@ -14,6 +14,7 @@ import { Agent } from 'src/app/models/agent';
 import { Simulation } from 'src/app/models/simulation';
 import { SimulationService } from 'src/app/_services/simulation.service';
 import { PlaceMap } from 'src/app/models/placemap';
+import { Router } from '@angular/router';
 
 @Component({
   selector: "app-map",
@@ -33,16 +34,25 @@ export class MapComponent implements OnInit {
   marker: Feature;
   geometryAux: Feature[];
 
-  constructor(private simulationService: SimulationService) {}
+  constructor(private simulationService: SimulationService, private router: Router) {}
 
   async ngOnInit() {
-    await this.simulationService.findSelected(this.simulationService.getIdSelected()).toPromise().then((data: Simulation) => {
-      this.simulation = data;
-      this.simulationAgents = this.simulation.agents;
-      this.simulationService.setSimulationSelected(this.simulation);
-    });
 
-    this.initializeMap();
+    if(this.simulationService.getIdSelected())
+    {
+      await this.simulationService.findSelected(this.simulationService.getIdSelected()).toPromise().then((data: Simulation) => {
+        this.simulation = data;
+        this.simulationAgents = this.simulation.agents;
+        this.simulationService.setSimulationSelected(this.simulation);
+      });
+  
+      this.initializeMap();  
+    }
+    else
+    {
+      this.router.navigate[("/")];
+    }
+
   }
 
   initializeMap(){

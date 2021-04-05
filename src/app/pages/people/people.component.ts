@@ -5,6 +5,7 @@ import { Agent } from 'src/app/models/agent';
 import { Day } from 'src/app/models/day';
 import { PlaceMap } from 'src/app/models/placemap';
 import { Place } from 'src/app/models/place';
+import { Router } from '@angular/router';
 
 @Component({
   selector: "app-people",
@@ -15,16 +16,22 @@ export class PeopleComponent implements OnInit {
   public simulationAgents: Agent[];
   public agentsLoaded: boolean = false;
   public p: number = 1
-  constructor(private simulationService: SimulationService) {}
+  constructor(private simulationService: SimulationService, private router: Router) {}
 
   async ngOnInit() {
-    console.log(this.simulationService.getIdSelected());
-    await this.simulationService.findSelected(this.simulationService.getIdSelected()).toPromise().then((data: Simulation) => {
-      this.simulation = data;
-      this.simulationAgents = this.simulation.agents;
-      this.simulationService.setSimulationSelected(this.simulation);
-    });
-    this.agentsLoaded = true;
+    if (this.simulationService.getIdSelected())
+    {
+      await this.simulationService.findSelected(this.simulationService.getIdSelected()).toPromise().then((data: Simulation) => {
+        this.simulation = data;
+        this.simulationAgents = this.simulation.agents;
+        this.simulationService.setSimulationSelected(this.simulation);
+      });
+      this.agentsLoaded = true;  
+    }
+    else
+    {
+      this.router.navigate(["/"]);
+    }
   }
 
   getPlaceOfInfection(name: string) {
