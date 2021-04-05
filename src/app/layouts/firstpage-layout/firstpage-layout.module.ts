@@ -16,6 +16,7 @@ import { PeopleComponent } from 'src/app/pages/people/people.component';
 import { DaysComponent } from 'src/app/pages/days/days.component';
 import { MapComponent } from 'src/app/pages/map/map.component';
 import { VideoComponent } from 'src/app/pages/video/video.component';
+import { InfoComponent } from 'src/app/pages/info/info.component';
 
 @NgModule({
   imports: [
@@ -29,7 +30,13 @@ import { VideoComponent } from 'src/app/pages/video/video.component';
   ],
   declarations: [
     SimulationComponent,
-    AboutComponent
+    AboutComponent,
+    DashboardComponent,
+    PeopleComponent,
+    DaysComponent,    
+    InfoComponent,
+    MapComponent,
+    VideoComponent
   ]
 })
 export class FirstPageLayoutModule {}

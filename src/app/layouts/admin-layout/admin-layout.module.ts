@@ -14,6 +14,7 @@ import { PeopleComponent } from 'src/app/pages/people/people.component';
 import { DaysComponent } from 'src/app/pages/days/days.component';
 import { InfoComponent } from 'src/app/pages/info/info.component';
 import { VideoComponent } from 'src/app/pages/video/video.component';
+import { VoltarComponent } from 'src/app/pages/voltar/voltar.component';
 
 @NgModule({
   imports: [
@@ -25,12 +26,6 @@ import { VideoComponent } from 'src/app/pages/video/video.component';
     NgxPaginationModule
   ],
   declarations: [
-    DashboardComponent,
-    PeopleComponent,
-    DaysComponent,    
-    InfoComponent,
-    MapComponent,
-    VideoComponent
   ]
 })
 export class AdminLayoutModule {}
