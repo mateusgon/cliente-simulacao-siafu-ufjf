@@ -45,7 +45,7 @@ export const ROUTES: RouteInfo[] = [
   },
   {
     path: "/simulacao/voltar",
-    title: "Voltar para listar de simulações",
+    title: "Voltar para listas de simulações",
     icon: "",
     class: ""
   }
