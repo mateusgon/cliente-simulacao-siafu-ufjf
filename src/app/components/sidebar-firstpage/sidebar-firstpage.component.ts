@@ -19,6 +19,12 @@ export const ROUTES: RouteInfo[] = [
     icon: "icon-single-02",
     class: ""
   },
+  {
+    path: "/simulacoes/comparacao",
+    title: "Comparações",
+    icon: "icon-chart-pie-36",
+    class: ""
+  }
 ];
 
 @Component({
