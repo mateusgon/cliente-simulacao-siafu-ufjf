@@ -5,7 +5,175 @@
       <div class=" card">
         <div class=" card-header"><h4 class=" title">Sobre o projeto</h4></div>
         <div class=" card-body">
-          <div class="card-description" [innerHTML]="description">
+          <div class="card-description">
+                <p><strong>Projeto:</strong> Simula Covid-19 UFJF - Apoio &agrave; tomada de decis&atilde;o para retomada de atividades
+                  presenciais na UFJF&nbsp;</p>
+                  <br/>
+                <p><strong>Motiva&ccedil;&atilde;o e objetivos</strong></p>
+                  <br/>
+                <p>A pandemia da Covid-19, declarada oficialmente pela OMS em mar&ccedil;o de 2020, traz atualmente uma s&eacute;rie de
+                  quest&otilde;es relativas a medidas de controle e conten&ccedil;&atilde;o de epidemias locais, que t&ecirc;m papel
+                  fundamental na tomada de decis&atilde;o de gestores e administradores principalmente no momento atual, ap&oacute;s
+                  mais de um ano de atividades suspensas, com campanhas de imuniza&ccedil;&atilde;o em curso. Como se retornar a algumas
+                  atividades com maior seguran&ccedil;a?</p>
+                <p>No caso da UFJF, resolu&ccedil;&otilde;es t&ecirc;m sido discutidas quanto ao retorno de atividades, possibilidade de
+                  atividades h&iacute;bridas, setores administrativos, etc...as discuss&otilde;es e decis&otilde;es s&atilde;o tomadas
+                  baseadas no cen&aacute;rio epidemiol&oacute;gico do munic&iacute;pio, bem como na literatura cient&iacute;fica
+                  dispon&iacute;vel, mas sem a possibilidade de se entender de forma mais fidedigna como seriam estes retornos, ou quais
+                  os impactos na sa&uacute;de da comunidade UFJF.</p>
+                <p>Esta plataforma traz um ambiente computacional, de arquitetura pervasiva, onde h&aacute; a possibilidade de se
+                  simular, em tempo real, como o campus da UFJF funcionaria em um dia normal, sem qualquer restri&ccedil;&atilde;o,
+                  contabilizando discentes, docentes, TAEs, &aacute;reas de maiores concentra&ccedil;&otilde;es, din&acirc;mica de
+                  mobilidade destes atores entre as diferentes os diferentes locais da universidade e inclusive contabilizando o
+                  transporte p&uacute;blico, com hor&aacute;rios de pico, por exemplo.</p>
+                <p>A partir desta base, que seria o dia a dia da UFJF, &eacute; poss&iacute;vel que sejam feitas
+                  interven&ccedil;&otilde;es nestes atores, como por exemplo incluir pessoas infectadas pelo SarsCov-2, e simular, a
+                  partir de dados da literatura e/ou observados, como ocorreria o espalhamento do v&iacute;rus pelo campus, considerando
+                  os contatos destes atores infectados, sua mobilidade e situa&ccedil;&atilde;o quanto ao desenvolvimento ou n&atilde;o
+                  da Covid-19, com seus n&iacute;veis de gravidade, chegando inclusive ao &oacute;bito.</p>
+                <p>Ainda sobre este cen&aacute;rio, &eacute; poss&iacute;vel que se entenda como interven&ccedil;&otilde;es como
+                  suspens&atilde;o de atividades presenciais, distanciamento social em determinadas unidades, uso de m&aacute;scaras e
+                  imuniza&ccedil;&atilde;o, seja por vacina&ccedil;&atilde;o, seja por contamina&ccedil;&atilde;o pr&eacute;via, pode
+                  afetar esta din&acirc;mica de contamina&ccedil;&atilde;o.</p>
+                <p>As primeiras simula&ccedil;&otilde;es apresentadas nesta plataforma s&atilde;o bastante simples, utilizando-se apenas
+                  parametriza&ccedil;&otilde;es baseadas nos contatos entre atores e medidas de restri&ccedil;&atilde;o de atividades
+                  presenciais e distanciamento social. Foram escolhidos 4 cen&aacute;rios, sendo um deles sem qualquer
+                  interven&ccedil;&atilde;o, onde &eacute; poss&iacute;vel que se entenda como seriam os resultados desta microepidemia,
+                  contabilizando novos casos, interna&ccedil;&otilde;es e &oacute;bitos.</p>
+                <p>A ideia &eacute; avan&ccedil;ar na sofistica&ccedil;&atilde;o das simula&ccedil;&otilde;es, implementando modelos
+                  matem&aacute;ticos e estoc&aacute;sticos em unidades acad&ecirc;micas, de pesquisa, conviv&ecirc;ncia e
+                  administrativas, e integrar estes modelos de unidades &agrave; din&acirc;mica proporcionada pelo ambiente de
+                  simula&ccedil;&atilde;o. Os micromodelos tamb&eacute;m ter&atilde;o grande apelo para aux&iacute;lio na tomada de
+                  decis&otilde;es, como por exemplo a possibilidade de se simular a reabertura de um espa&ccedil;o essencial de
+                  conv&iacute;vio como o Restaurante Universit&aacute;rio, Bibliotecas, laborat&oacute;rios e salas de aula. Qual o
+                  percentual de vacinados seria seguro para a reabertura do RU? Qual o distanciamento e capacidade m&aacute;xima seriam
+                  os mais seguros nestes ambientes? Este ambiente permitir&aacute;, muito em breve, que as respostas a estas
+                  quest&otilde;es tenham algum embasamento cient&iacute;fico, voltado para a realidade local.&nbsp;</p>
+                <br/>  
+                <p><strong>Simula&ccedil;&otilde;es atuais apresentadas</strong></p>
+                <br/>
+                <p>As simula&ccedil;&otilde;es foram geradas a partir de par&acirc;metros da epidemia retirados da literatura
+                  cient&iacute;fica, ou por estimativas feitas com os dados de Juiz de Fora. Muitos desses par&acirc;metros ser&atilde;o
+                  fixos, e outros ser&atilde;o mudados para que possamos principalmente avaliar como medidas de
+                  interven&ccedil;&atilde;o n&atilde;o farmacol&oacute;gicas podem afetar o curso de uma epidemia. Procurou-se
+                  caracterizar estas interven&ccedil;&otilde;es pela redu&ccedil;&atilde;o no contingente de pessoas que circulariam, e
+                  consequentemente o Rt esperado.</p>
+                <p>O cen&aacute;rio utilizado &eacute; o campus da UFJF, simulando o que poderia ocorrer, respeitando fluxo de pessoas
+                  nos per&iacute;odos de um dia, locais de maior aglomera&ccedil;&atilde;o e circula&ccedil;&atilde;o de pessoas
+                  externas, de passagem pelo campus. As interven&ccedil;&otilde;es, nos cen&aacute;rios em que ocorrem, acontecem sempre
+                  no 10&ordm; dia, de um total de 50 dias de simula&ccedil;&atilde;o.</p>
+                <p><strong>S&atilde;o par&acirc;metros fixos:</strong></p>
+                <ul>
+                  <li>Tempo que uma pessoa permanece infectada: 14 dias (recomenda&ccedil;&atilde;o da OMS para quarentena de
+                    infectados)</li>
+                  <li>Tempo m&eacute;dio para uma pessoa infectada passar a infectar outras: 2 dias (Li et al. 2020 ; Linton et al.
+                    2020; Lauer et al. 2020; Bi et al. 2020; Sanche et al. 2020)</li>
+                  <li>Percentual de assintom&aacute;ticos: 85% (Z. Wu and McGoogan 2020; J. Liu et al. 2020)</li>
+                  <li>Percentual de pacientes confirmados que necessitar&atilde;o de leito de enfermaria: 8% (baseado em dados de Juiz
+                    de Fora at&eacute; final de Abril de 2020)</li>
+                  <li>Percentual de pacientes confirmados que necessitar&atilde;o de leito de UTI: 5% (baseado em dados de Juiz de Fora
+                    at&eacute; final de Abril de 2020)</li>
+                </ul>
+                <p>Foram simulados os seguintes cen&aacute;rios, baseados nos trabalhos do Imperial College sobre medidas n&atilde;o
+                  farmacol&oacute;gicas de mitiga&ccedil;&atilde;o da pandemia:</p>
+                <ul>
+                  <li>Cen&aacute;rio sem restri&ccedil;&atilde;o: Neste cen&aacute;rio, o fluxo de pessoas no campus &eacute; o normal,
+                    sem qualquer restri&ccedil;&atilde;o. O Rt esperado para esta situa&ccedil;&atilde;o &eacute; de cerca de 3</li>
+                  <li>Isolamento flex&iacute;vel: Seria o cen&aacute;rio de termos apenas medidas de distanciamento social, e a
+                    suspens&atilde;o de apenas algumas atividades presenciais, reduzindo o fluxo de pessoas em cerca de 30% e gerando um
+                    Rt de cerca de 2,6.</li>
+                  <li>Isolamento moderado: A suspens&atilde;o das atividades &eacute; maior, reduzindo o fluxo de pessoas a 50% do
+                    normal. O Rt esperado &eacute; de 1,9.</li>
+                  <li>Isolamento r&iacute;gido: Todas as atividades presenciais s&atilde;o suspensas, permanecendo apenas as essenciais.
+                    A redu&ccedil;&atilde;o &eacute; de 70% da popula&ccedil;&atilde;o total, gerando um Rt esperado de 0.9, menor que
+                    1.</li>
+                </ul>
+                <br/>
+                <p><strong>Arquitetura</strong></p>
+                <br/>
+                <p>Para atender aos requisitos de simula&ccedil;&atilde;o, gera&ccedil;&atilde;o dos dados e visualiza&ccedil;&atilde;o
+                  dos resultados dos cen&aacute;rios desenhados, uma arquitetura computacional foi desenvolvida, A arquitetura
+                  computacional foi dividida em tr&ecirc;s m&oacute;dulos principais:&nbsp;</p>
+                <ul>
+                  <li>M&oacute;dulo de simula&ccedil;&atilde;o e gera&ccedil;&atilde;o dos dados: O objetivo trata de permitir a
+                    constru&ccedil;&atilde;o de diferentes cen&aacute;rios de simula&ccedil;&atilde;o. Em seguida, executar os
+                    cen&aacute;rios constru&iacute;dos e realizar a gera&ccedil;&atilde;o dos dados para armazenamento posterior. No
+                    contexto do trabalho realizado, os 4 cen&aacute;rios expostos anteriormente foram constru&iacute;dos e executados
+                    com apoio do supercomputador Aurora Tsubasa da NEC Corporation.</li>
+                  <li>M&oacute;dulo de processamento e armazenamento dos dados: O objetivo trata de permitir o armazenamento dos dados
+                    gerados. Esse m&oacute;dulo recebe todos os dados gerados no m&oacute;dulo de simula&ccedil;&atilde;o, realiza o
+                    processamento deles e armazena em um banco de dados os dados referentes a cada uma das simula&ccedil;&otilde;es
+                    executadas anteriormente. Dessa maneira, esses dados podem ser acessados, utilizados para visualiza&ccedil;&atilde;o
+                    e estudo.&nbsp;</li>
+                  <li>M&oacute;dulo de exibi&ccedil;&atilde;o dos dados obtidos: O objetivo trata de permitir a
+                    visualiza&ccedil;&atilde;o das simula&ccedil;&otilde;es e os resultados obtidos por meio da execu&ccedil;&atilde;o
+                    delas. O m&oacute;dulo de exibi&ccedil;&atilde;o trata do site em que est&aacute; sendo acessado no momento. Dada a
+                    necessidade de visualiza&ccedil;&atilde;o de como se comportariam as curvas de contamina&ccedil;&atilde;o,
+                    letalidade e cura, uma an&aacute;lise gr&aacute;fica foi disponibilizada pela plataforma. Al&eacute;m disso,
+                    informa&ccedil;&otilde;es dos personagens, tal como data de infec&ccedil;&atilde;o, cura, atendimento hospitalar
+                    necess&aacute;rio, local de infec&ccedil;&atilde;o, s&atilde;o disponibilizadas na plataforma.</li>
+                </ul>
+                <br/>
+                <p><strong>Tecnologias utilizadas</strong></p>
+                <br/>
+                <p>Para o desenvolvimento da arquitetura proposta, foram utilizadas as seguintes tecnologias:</p>
+                <ul>
+                  <li>Simulador: Siafu (https://siafusimulator.org/)</li>
+                  <li>Banco de dados: PostgreSQL (https://www.postgresql.org/)</li>
+                  <li>M&oacute;dulo de processamento e armazenamento dos dados: Java Spring (https://spring.io/)</li>
+                  <li>M&oacute;dulo de visualiza&ccedil;&atilde;o dos dados: Angular (https://angular.io/)</li>
+                  <li>Execu&ccedil;&atilde;o das simula&ccedil;&otilde;es: NEC SX-Aurora Tsubasa
+                    (https://www.nec.com/en/global/solutions/hpc/sx/index.html)</li>
+                </ul>
+                <br/>
+                <p><strong>Artigos aceitos que fazem cita&ccedil;&atilde;o da plataforma</strong></p>
+                <br/>
+                <ul>
+                  <li>M. G. do Nascimento et al., &quot;Covid-19: A Digital Transformation Approach to a Public Primary Healthcare
+                    Environment,&quot; 2020 IEEE Symposium on Computers and Communications (ISCC), 2020, pp. 1-6, doi:
+                    10.1109/ISCC50000.2020.9219643.</li>
+                  <li>DO NASCIMENTO, Mateus Gon&ccedil;alo et al. Covid-19: A Simulation-Based Architecture Proposal for IoT Application
+                    Development. In: 2020. International Conference on High Performance Computing &amp; Simulation (HPCS). IEEE, 2020.</li>
+                  <li>
+                    do Nascimento M.G., Braga R.M.M., David J.M.N., Dantas M.A.R., Colugnati F.A.B. (2021) Towards an IoT Architecture to
+                  Pervasive Environments Through Design Science. In: Barolli L., Woungang I., Enokido T. (eds) Advanced Information
+                  Networking and Applications. AINA 2021. Lecture Notes in Networks and Systems, vol 226. Springer, Cham.
+                  <a href="https://doi.org/10.1007/978-3-030-75075-6_3">https://doi.org/10.1007/978-3-030-75075-6_3</a>
+                  </li>
+                </ul>
+                <br/>
+                <p><strong>Reconhecimentos</strong></p>
+                <br/>
+                <p>Este trabalho contou com o apoio da Rede Integrada de Pesquisa em Alta Velocidade (RePesq) da UFJF,
+                  <a href="https://repesq.ufjf.br/">https://repesq.ufjf.br/</a>.&nbsp;</p>
+                <p>Este trabalho contou com o apoio da NEC Corporation, <a href="https://br.nec.com/">https://br.nec.com/</a>.</p>
+                <br/>
+                <p><strong>Refer&ecirc;ncias</strong></p>
+                <br/>
+                <p>Bi, Qifang, Yongsheng Wu, Shujiang Mei, Chenfei Ye, Xuan Zou, Zhen Zhang, Xiaojian Liu, et al. 2020.
+                  &ldquo;Epidemiology and Transmission of COVID-19 in Shenzhen China: Analysis of 391 Cases and 1,286 of Their Close
+                  Contacts.&rdquo; medRxiv, March, 2020.03.03.20028423. https://doi.org/10.1101/2020.03.03.20028423.</p>
+                <p>Lauer, Stephen A., Kyra H. Grantz, Qifang Bi, Forrest K. Jones, Qulu Zheng, Hannah Meredith, Andrew S. Azman,
+                  Nicholas G. Reich, and Justin Lessler. 2020. &ldquo;The Incubation Period of 2019-nCoV from Publicly Reported
+                  Confirmed Cases: Estimation and Application.&rdquo; medRxiv, February, 2020.02.02.20020016.
+                  https://doi.org/10.1101/2020.02.02.20020016.</p>
+                <p>Li, Qun, Xuhua Guan, Peng Wu, Xiaoye Wang, Lei Zhou, Yeqing Tong, Ruiqi Ren, et al. 2020. &ldquo;Early Transmission
+                  Dynamics in Wuhan, China, of Novel Coronavirus-Infected Pneumonia.&rdquo; New England Journal of Medicine 0 (0):null.
+                  https://doi.org/10.1056/NEJMoa2001316.</p>
+                <p>Linton, Natalie M., Tetsuro Kobayashi, Yichi Yang, Katsuma Hayashi, Andrei R. Akhmetzhanov, Sung-mok Jung, Baoyin
+                  Yuan, Ryo Kinoshita, and Hiroshi Nishiura. 2020. &ldquo;Incubation Period and Other Epidemiological Characteristics of
+                  2019 Novel Coronavirus Infections with Right Truncation: A Statistical Analysis of Publicly Available Case
+                  Data.&rdquo; Journal of Clinical Medicine 9 (2): 538. https://doi.org/10.3390/jcm9020538.</p>
+                <p>Liu, Jingyuan, Yao Liu, Pan Xiang, Lin Pu, Haofeng Xiong, Chuansheng Li, Ming Zhang, et al. 2020.
+                  &ldquo;Neutrophil-to-Lymphocyte Ratio Predicts Severe Illness Patients with 2019 Novel Coronavirus in the Early
+                  Stage.&rdquo; medRxiv, February, 2020.02.10.20021584. https://doi.org/10.1101/2020.02.10.20021584.</p>
+                <p>Sanche, Steven, Yen Ting Lin, Chonggang Xu, Ethan Romero-Severson, Nick Hengartner, and Ruian Ke. 2020. &ldquo;The
+                  Novel Coronavirus, 2019-nCoV, Is Highly Contagious and More Infectious Than Initially Estimated.&rdquo; medRxiv,
+                  February, 2020.02.07.20021154. https://doi.org/10.1101/2020.02.07.20021154.</p>
+                <p>Wu, Zunyou, and Jennifer M. McGoogan. 2020. &ldquo;Characteristics of and Important Lessons from the Coronavirus
+                  Disease 2019 (COVID-19) Outbreak in China: Summary of a Report of 72 314 Cases from the Chinese Center for Disease
+                  Control and Prevention.&rdquo; JAMA, February. https://doi.org/10.1001/jama.2020.2648.</p>
+                <p><br></p>
           </div>
         </div>
       </div>
